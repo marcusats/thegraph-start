@@ -1,0 +1,10 @@
+query GetApes($skip: Int!) {
+  apes(first: 10, skip: $skip) {
+    owner
+    tokenId
+    lastTrasnfer
+    apeContent {
+      content
+    }
+  }
+}

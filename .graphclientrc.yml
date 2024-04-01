@@ -1,0 +1,7 @@
+sources:
+  - name: BoredApeYachtClub
+    handler:
+      graphql:
+        endpoint: https://api.studio.thegraph.com/query/43248/ape-tutorial/v4
+documents:
+  - ./src/utils/graphql/getApes.graphql
