@@ -21,7 +21,7 @@ Abre [http://localhost:3000](http://localhost:3000) en tu navegador para ver el 
 
 Este archivo contiene todas las dependencias necesarias para el proyecto. Las más relevante para TheGraph es:
 
-- `@graphprotocol/client-cli`: Esta librería facilita la integración con TheGraph.
+- [`@graphprotocol/client-cli`](https://github.com/graphprotocol/graph-client): Esta librería facilita la integración con TheGraph.
 
 
 ### `.graphclientrc.yml`
