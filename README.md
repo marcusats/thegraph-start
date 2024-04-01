@@ -1,36 +1,38 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Proyecto de Integración con TheGraph
 
-## Getting Started
+Este repositorio es un ejemplo de cómo implementar una integración con TheGraph protocol utilizando la librería "@graphprotocol/client-cli".
 
-First, run the development server:
+## Comenzando
 
+Primero, ejecuta el servidor de desarrollo:
 ```bash
 npm run dev
-# or
+# o
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Abre [http://localhost:3000](http://localhost:3000) en tu navegador para ver el resultado.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+## Estructura del Proyecto
+### `package.json`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Este archivo contiene todas las dependencias necesarias para el proyecto. Las más relevante para TheGraph es:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- `@graphprotocol/client-cli`: Esta librería facilita la integración con TheGraph.
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### `.graphclientrc.yml`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Este archivo de configuración define la fuente de datos para TheGraph. En este caso, se está utilizando el endpoint de BoredApeYachtClub.
+```yml
+sources:
+  - name: BoredApeYachtClub
+    handler:
+      graphql:
+        endpoint: https://api.studio.thegraph.com/query/43248/ape-tutorial/v4
+documents:
+  - ./src/utils/graphql/getApes.graphql
+```
